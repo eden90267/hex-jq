@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>This</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <style type="text/css">
+    .menu {
+      width: 500px;
+      margin: 20px auto;
+    }
+    .menu li {
+      padding: 5px;
+      border: 1px solid;
+      margin-bottom: 1em;
+    }
+    .menu li:hover, .menu li.active {
+      background: blue;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  
+  <ul class="menu">
+    <li>選單1</li>
+    <li>選單2</li>
+    <li>選單3</li>
+    <li>選單4</li>
+    <li>選單5</li>
+    <li>選單6</li>
+  </ul>
+
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script type="text/javascript">
+    $('.menu li').click(function(event) {
+      /* Act on the event */
+      $('.menu li').removeClass('active')
+
+      // $('.menu li').addClass('active'); // 會全部
+
+      // 1.
+      $(this).addClass('active'); // $(this) 代表自己，如果事件觸發了，需要對自己操作可使用 $(this)
+      // 2.
+      $(event.target).addClass('active');
+    });
+  </script>
+</body>
+</html>
