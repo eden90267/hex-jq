@@ -1,0 +1,9 @@
+.box1,.box2,.box3 {
+  width: 100px;
+  height: 100px;
+  display: none;
+}
+
+.box1 { background-color: #000; }
+.box2 { background-color: orange; }
+.box3 { background-color: pink; }
