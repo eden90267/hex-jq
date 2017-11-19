@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>click() and on()</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <style type="text/css">
+    .wrap {
+      width: 500px;
+      margin: 20px auto;
+    }
+    .wrap h1 {
+      border: 1px solid;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+    <div class="box1">
+      
+    </div>
+
+    <div class="box2">
+      <h1>寫在HTML裡面的</h1>
+    </div>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // $('h1').click(function(event) {
+      //   alert('有效！');
+      // });
+      // click 會有先後順序動態產生而沒綁定事件的問題
+      // 不管順序的話，需使用 on，即時監聽
+      $('.wrap').on('click', 'h1', function(event) {
+        event.preventDefault();
+        /* Act on the event */
+        alert('有效');
+      });
+
+      $('.box1').html('<h1>用jQuery動態產生的</h1>');
+    });
+  </script>
+</body>
+</html>

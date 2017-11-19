@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Find</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <style type="text/css">
+    .cart {
+      width: 500px;
+      margin: 20px auto;
+    }
+    .cart li {
+      border: 1px solid;
+      width: 30%;
+      height: 100px;
+      margin: 1%;
+      float: left;
+      cursor: pointer;
+    }
+    .cart h3.active{
+      background: blue;
+      color:#fff;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="cart">
+    <ul>
+      <li>
+        <h3>產品1</h3>
+      </li>
+      <li>
+        <h3>產品2</h3>
+      </li>
+      <li>
+        <h3>產品3</h3>
+      </li>
+      <li>
+        <h3>產品4</h3>
+      </li>
+      <li>
+        <h3>產品5</h3>
+      </li>
+      <li>
+        <h3>產品6</h3>
+      </li>
+    </ul>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.cart li').click(function(event) {
+        /* Act on the event */
+        $(this).find('h3').addClass('active').parent().siblings().find('h3').removeClass('active');
+      });
+    });
+  </script>
+</body>
+</html>

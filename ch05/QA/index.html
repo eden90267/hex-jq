@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QA 折疊選單</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <style type="text/css">
+    .question-list {
+      margin: 0 auto;
+      width: 500px
+    }
+    .question h3 {
+      border: 1px solid gray;
+      padding: 5px;
+      font-size: 18px;
+    }
+    .question h3:hover,.question h3.active {
+      background: blue;
+      color:#fff;
+    }
+    .question p {
+      display: none;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="question-list">
+    <div class="question">
+      <h3>1.請問1+1=多少</h3>
+      <p>答案記得沒錯的話，應該是2吧！</p>
+    </div>
+    <div class="question">
+      <h3>2.那假如是2+2的話呢</h3>
+      <p>當然是4啊！</p>
+    </div>
+    <div class="question">
+      <h3>3.ok，所以3+3就等於7嘍</h3>
+      <p>...我看你還是重讀小學吧！</p>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.question h3').click(function(event) {
+
+        // myself
+        // $(this).addClass('active').parent().find('p').slideDown().parent().siblings().find('h3').removeClass('active').parent().find('p').slideUp();
+
+        // teacher
+        $(this).addClass('active');
+        $(this).parent().find('p').slideDown();
+        $(this).parent().siblings().find('h3').removeClass('active');
+        $(this).parent().siblings().find('p').slideUp();
+        
+      });
+    });
+  </script>
+</body>
+</html>

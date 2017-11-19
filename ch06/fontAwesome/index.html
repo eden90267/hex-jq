@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FontAwesome</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <style type="text/css">
+    .list a{
+      text-decoration: none;
+      color: gray;
+    }
+    .list a:hover{
+      
+      color: #434343;
+    }
+    .list a:before{
+      margin-right: 15px;
+      
+    }
+    .list li{
+      margin-bottom: 20px;
+      font-size: 40px;
+
+    }
+  </style>
+</head>
+<body>
+  <ul class="list">
+    <li>
+      <a href="doc/word.jpg">圖片檔案</a>
+    </li>
+    <li><a href="doc/word2.jpg">圖片二檔案</a></li>
+    <li>
+      <a href="doc/word.doc">word檔案</a>
+    </li>
+    <li>
+      <a href="doc/word.zip">壓縮檔案</a>
+    </li>
+  </ul>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('a[href$=".doc"]').addClass('fa fa-file-word-o'); // 有包含這些內容，就執行後面的事情
+      $('a[href$=".jpg"]').addClass('fa fa-file-photo-o');
+      $('a[href$=".zip"]').addClass('fa fa-file-zip-o');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>remove()</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <style type="text/css">
+    td,th{
+      border: 1px solid;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <tr>
+      <td><input type="button" class="remove" value="刪除"></td>
+      <td>內容1</td>
+    </tr>
+    <tr>
+      <td><input type="button" class="remove" value="刪除"></td>
+      <td>內容2</td>
+    </tr>
+    <tr>
+      <td><input type="button" class="remove" value="刪除"></td>
+      <td>內容3</td>
+    </tr>
+  </table>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.remove').click(function(event) {
+        /* Act on the event */
+        $(this).parent().parent().remove();
+      });;
+    });
+  </script>
+</body>
+</html>
